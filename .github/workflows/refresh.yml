@@ -1,0 +1,21 @@
+name: Refresh Token MBH
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Setiap 1 jam
+  workflow_dispatch:  # Bisa dijalankan manual
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Run PHP Script
+        run: php refresh_token.php

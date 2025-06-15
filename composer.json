@@ -1,0 +1,6 @@
+{
+  "name": "drakey676/mbh-cron",
+  "require": {
+    "ext-mysqli": "*"
+  }
+}
